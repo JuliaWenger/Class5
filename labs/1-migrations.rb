@@ -18,6 +18,7 @@
 
 # 1. in terminal, generate a model and table for ______
 # rails generate model _____
+##rails generate model Salesperson
 
 # 2. open newly generated files
 
@@ -27,3 +28,9 @@
 # rails db:migrate
 
 # 5. check the schema to confirm the change
+
+## rails generate model
+
+## rails db:migrate
+
+## rails runner -----------
