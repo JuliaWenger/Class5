@@ -29,13 +29,45 @@ new_company.save #insert into the table (otherwise you've just queued it up)
 
 puts new_company.inspect
 
+puts "There are #{Company.all.count} companies"
+
+company2 = Company.new
+
+company2 ["name"] = "Amazon"
+company2 ["city"] = "Seattle"
+company2 ["state"] = "WA"
+company2.save 
+
+puts "There are #{Company.all.count} companies"  ##will only read what was written before it, not after
+
+company3 = Company.new
+
+company3 ["name"] = "Twitter"
+company3 ["city"] = "San Francisco"
+company3 ["state"] = "CA"
+company3.save 
 
 # 3. query companies table to find all row with California company
 
+all_companies = Company.all 
+puts all_companies.inspect
+
+cali_companies = Company.where( {"state" => "CA"})
+puts cali_companies.inspect
+
+puts "CA companies: #{cali_companies.count}"
+
 # 4. query companies table to find single row for Apple
+apple = Company.find_by({"name" => "Apple"})
+puts apple.inspect 
 
 # 5. read a row's column value
+puts apple["url"]
 
 # 6. update a row's column value
+amazon = Company.find_by ({"name" => "Amazon"})
+puts amazon["url"]
+amazon["url"] = "https://www.amazon.com"
+amazon.save #updates the row in the table 
 
 # 7. delete a row

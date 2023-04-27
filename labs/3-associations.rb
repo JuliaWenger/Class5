@@ -20,6 +20,7 @@ Activity.destroy_all
 # 2. Display all the activities between the salesperson used above
 # and one of the contacts (sample output below):
 
+
 # ---------------------------------
 # Activities between Ben and Tim Cook:
 # - quick checkin over facetime
