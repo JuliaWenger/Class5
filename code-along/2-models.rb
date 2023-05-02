@@ -47,6 +47,8 @@ company3 ["city"] = "San Francisco"
 company3 ["state"] = "CA"
 company3.save 
 
+puts "There are #{Company.all.count} companies"
+
 # 3. query companies table to find all row with California company
 
 all_companies = Company.all 
@@ -65,9 +67,11 @@ puts apple.inspect
 puts apple["url"]
 
 # 6. update a row's column value
-amazon = Company.find_by ({"name" => "Amazon"})
+amazon = Company.find_by({"name" => "Amazon"})
 puts amazon["url"]
 amazon["url"] = "https://www.amazon.com"
-amazon.save #updates the row in the table 
+amazon.save
+
+#updates the row in the table 
 
 # 7. delete a row

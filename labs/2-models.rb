@@ -22,20 +22,18 @@ Salesperson.destroy_all
 puts "Salespeople: #{Salesperson.all.count}"
 
 # 2. insert 1-2 rows in salespeople table.
-salesperson1 = Salesperson.new
-puts salesperson1.inspect
+salesperson = Salesperson.new
+salesperson ["first_name"] = "Ben"
+salesperson ["last_name"] = "Block"
+salesperson ["email"] = "ben.block@gmail.com"
+salesperson.save
 
-salesperson1 ["first_name"] = "John"
-salesperson1 ["last_name"] = "Doe"
-salesperson1 ["email"] = "john.doe@gmail.com"
-salesperson1.save
+salesperson = Salesperson.new
 
-salesperson2 = Salesperson.new
-
-salesperson2 ["first_name"] = "Jane"
-salesperson2 ["last_name"] = "Smith"
-salesperson2 ["email"] = "jane.smith@gmail.com"
-salesperson2.save
+salesperson ["first_name"] = "Jane"
+salesperson ["last_name"] = "Smith"
+salesperson ["email"] = "jane.smith@gmail.com"
+salesperson.save
 
 # 3. write code to display how many salespeople rows are in the database
 puts "Salespeople: #{Salesperson.all.count}"
@@ -51,12 +49,16 @@ Jane.save
 # CHALLENGE:
 # 5. write code to display each salesperson's full name
 
-first_name = ben ["first_name"]
-last_name = ben ["last_name"]
-puts "#(first_name) #[last_name]"
-
-all_salespeople = Salesperson.all
 # ---------------------------------
 # Salespeople: 2
 # Ben Block
 # Brian Eng
+
+all_salespeople = Salesperson.all
+# set the B variable to some value
+for salesperson in all_salespeople 
+    #do something 
+first_name = salesperson["first_name"]
+last_name = salesperson["last_name"]
+puts "#{first_name} #{last_name}"
+end 
